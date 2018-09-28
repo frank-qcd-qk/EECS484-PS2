@@ -13,7 +13,7 @@ dWL = Wkj*0;
 dW_Lminus1 = zeros(J-1,I);
 dW_Lminus1_cum = Wji*0;
 
-
+    
     %need to compute outputs of both j and k layers for all stimulus
     %patterns
     [outputs_j,outputs_k]=eval_2layer_fdfwdnet(Wji,bj_vec,phi_code1,Wkj,bk_vec,phi_code2,training_patterns);
