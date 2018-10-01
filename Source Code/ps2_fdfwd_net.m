@@ -114,7 +114,7 @@ while (1>0) % infinite loop--ctl-C to stop; edit this to run finite number of ti
         W21_new=W21-eta*dWL_cum;
         b2_vec_new = b2_vec - eta*delta_L_cum;   
     end
-    %eta = eta*1.1 %increase step size
+    eta = eta*1.1 %increase step size
     
     
     %optional debug: plot out incremental progress every plot_iter iterations
