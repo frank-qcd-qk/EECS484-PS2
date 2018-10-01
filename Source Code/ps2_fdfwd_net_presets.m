@@ -87,7 +87,7 @@ b2_vec_new = b2_vec;
 %evaluate networkover a grid of inputs and plot using "surf"; 
 %works only in special case:  assumes inputs are 2-D and range from 0 to 1 
 %ffwd_surfplot(W1p,W21);
-eta=0.01; % tune this value; may also want to vary this during iterations
+eta=0.005; % tune this value; may also want to vary this during iterations
 iteration=0;
 %BP:
 iter1k=0;
