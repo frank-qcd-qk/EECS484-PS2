@@ -8,7 +8,7 @@ load arm_xy.dat; %training data is stored in this file
 training_patterns = (arm_xy(:,1:2))'; %pattern inputs are columns
 
 %ADJUST THIS: number of interneurons AFTER premapping
-nnodes_layer1=50; 
+nnodes_layer1=75; 
 phi1_code=1; %logsig
 phi2_code=2; %linear  %NOTICE THIS: LINEAR ACTIVATION FNC FOR LAST LAYER (OK)
 
@@ -87,7 +87,7 @@ b2_vec_new = b2_vec;
 %evaluate networkover a grid of inputs and plot using "surf"; 
 %works only in special case:  assumes inputs are 2-D and range from 0 to 1 
 %ffwd_surfplot(W1p,W21);
-eta=0.001; % tune this value; may also want to vary this during iterations
+eta=0.01; % tune this value; may also want to vary this during iterations
 iteration=0;
 %BP:
 iter1k=0;
