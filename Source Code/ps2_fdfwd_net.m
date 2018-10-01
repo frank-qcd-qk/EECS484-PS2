@@ -59,7 +59,7 @@ b2_vec = (2*rand(nnodes_layer2,1)-1);
 b2_vec_new = b2_vec;
 
 %eta = 0.00001 %to test derivatives and dE, use very small eta
-eta=0.1; % tune this value; may also want to vary this during iterations
+eta=1; % tune this value; may also want to vary this during iterations
 iteration=0;
 %BP:
 iter1k=0;
