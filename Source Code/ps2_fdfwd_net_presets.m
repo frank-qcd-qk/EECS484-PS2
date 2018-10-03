@@ -8,7 +8,7 @@ load arm_xy.dat; %training data is stored in this file
 training_patterns = (arm_xy(:,1:2))'; %pattern inputs are columns
 
 %ADJUST THIS: number of interneurons AFTER premapping
-nnodes_layer1=75; 
+nnodes_layer1=500; 
 phi1_code=1; %logsig
 phi2_code=2; %linear  %NOTICE THIS: LINEAR ACTIVATION FNC FOR LAST LAYER (OK)
 
@@ -87,7 +87,7 @@ b2_vec_new = b2_vec;
 %evaluate networkover a grid of inputs and plot using "surf"; 
 %works only in special case:  assumes inputs are 2-D and range from 0 to 1 
 %ffwd_surfplot(W1p,W21);
-eta=0.005; % tune this value; may also want to vary this during iterations
+eta=0.001; % tune this value; may also want to vary this during iterations
 iteration=0;
 %BP:
 iter1k=0;
@@ -131,13 +131,13 @@ while (1>0) % infinite loop--ctl-C to stop; edit this to run finite number of ti
     [rms,Esqd_new] = err_eval(W1p_new,b1_vec_new,phi1_code,W21_new,b2_vec_new,phi2_code,premapped_training_patterns,z1_targets);
     dE = 0.5*(Esqd_new-Esqd);
     if (dE>0) %oops; decrease step size and back up
-        eta=0.5*eta;
+        eta=0.25*eta;
         W1p_new=W1p-eta*dW_Lminus1_cum;
         b1_vec_new =b1_vec - eta*delta_Lminus1_cum;
         W21_new=W21-eta*dWL_cum;
         b2_vec_new = b2_vec - eta*delta_L_cum;   
     end
-    eta = eta*1.1 %increase step size
+    eta = eta*1.01 %increase step size
     
     
     %optional debug: plot out incremental progress every plot_iter iterations
